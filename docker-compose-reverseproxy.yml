@@ -93,7 +93,7 @@ services:
       - "8080"
 
   admin_web:
-    image: docker-registry.s.arkea.com/tock/bot_admin:$TAG
+    image: docker-registry.s.arkea.com/tock/bot_admin:$FEATURE_TAG
     depends_on:
       - mongo
       - mongo2

@@ -23,11 +23,13 @@
     <parent>
         <groupId>ai.tock</groupId>
         <artifactId>tock-docker</artifactId>
-        <version>21.9.2-FAQ-SNAPSHOT</version>
+        <version>21.9.2-FAQ-2-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>tock-docker-bot-admin</artifactId>
     <packaging>pom</packaging>
+    <version>21.9.2-FAQ-2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>

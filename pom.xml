@@ -22,7 +22,7 @@
 
     <groupId>ai.tock</groupId>
     <artifactId>tock-docker</artifactId>
-    <version>21.9.2-FAQ-SNAPSHOT</version>
+    <version>21.9.2-FAQ-2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -273,16 +273,6 @@
         <url>git@github.com:theopenconversationkit/tock-docker.git</url>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <repositories>
         <repository>
@@ -297,5 +287,29 @@
             </snapshots>
         </repository>
     </repositories>
+
+  <profiles>
+     <profile>
+        <id>botadmin</id>
+        <modules>
+            <module>bot-admin</module>
+        </modules> 
+
+        <repositories>
+            <repository>
+                <id>nexus-snapshots</id>
+                <url>http://localhost:8081/repository/maven-snapshots</url>
+                <layout>default</layout>
+                <releases>
+                    <enabled>false</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                    <updatePolicy>always</updatePolicy>
+                </snapshots>
+            </repository>
+        </repositories>
+      </profile>
+  </profiles>
 
 </project>
