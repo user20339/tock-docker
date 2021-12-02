@@ -78,7 +78,7 @@ services:
       - "8080"
 
   admin_web:
-    image: tock/bot_admin:$TAG
+    image: 076505799098.dkr.ecr.eu-central-1.amazonaws.com/tock/bot_admin:21.9.2-FAQ-2-SNAPSHOT
     depends_on:
       - mongo
       - mongo2
