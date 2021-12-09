@@ -29,7 +29,7 @@
 
     <artifactId>tock-docker-bot-admin</artifactId>
     <packaging>pom</packaging>
-    <version>21.9.2-FAQ-2-SNAPSHOT</version>
+    <version>21.9.2-FAQ-3-SNAPSHOT</version>
 
     <dependencies>
         <dependency>

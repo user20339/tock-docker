@@ -65,7 +65,7 @@ services:
     entrypoint: [ "/scripts/setup.sh" ]
 
   build_worker:
-    image: docker-registry.s.arkea.com/tock/build_worker:$TAG
+    image: tock/build_worker:$TAG
     depends_on:
       - mongo
       - mongo2
@@ -78,14 +78,14 @@ services:
       - traefik.enable=false # No incoming traffic, therefore no need for reverse proxy
 
   duckling:
-    image: docker-registry.s.arkea.com/tock/duckling:$TAG
+    image: tock/duckling:$TAG
     environment:
       - tock_env=prod
     expose:
       - "8080"
 
   kotlin_compiler:
-    image: docker-registry.s.arkea.com/tock/kotlin_compiler:$TAG
+    image: tock/kotlin_compiler:$TAG
     environment:
       - tock_env=prod
       - tock_kotlin_compiler_classpath=/maven
@@ -93,7 +93,7 @@ services:
       - "8080"
 
   admin_web:
-    image: docker-registry.s.arkea.com/tock/bot_admin:$FEATURE_TAG
+    image: 076505799098.dkr.ecr.eu-central-1.amazonaws.com/tock/bot_admin:$FEATURE_TAG
     depends_on:
       - mongo
       - mongo2
@@ -114,7 +114,7 @@ services:
       - "8080"
 
   nlp_api:
-    image: docker-registry.s.arkea.com/tock/nlp_api:$TAG
+    image: tock/nlp_api:$TAG
     depends_on:
       - mongo
       - mongo2
@@ -131,7 +131,7 @@ services:
       - "8080"
 
   bot_api:
-    image: docker-registry.s.arkea.com/tock/bot_api:$TAG
+    image: tock/bot_api:$TAG
     depends_on:
       - mongo
       - mongo2

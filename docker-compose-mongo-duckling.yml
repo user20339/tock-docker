@@ -52,7 +52,7 @@ services:
     entrypoint: [ "/scripts/setup.sh" ]
 
   duckling:
-      image: docker-registry.s.arkea.com/tock/duckling:$TAG
+      image: tock/duckling:$TAG
       environment:
         - tock_mongo_url=mongodb://mongo:27017,mongo2:27018,mongo3:27019/?replicaSet=tock
         - tock_env=prod
